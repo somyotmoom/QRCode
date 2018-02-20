@@ -1,4 +1,1 @@
 # QRCode
-# QRCode
-# QRCode
-# QRCode
