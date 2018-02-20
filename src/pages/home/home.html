@@ -1,14 +1,20 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Ionic QR Code
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <ion-item>
+        <ion-input type="text" placeholder="ข้อมูล QR Code" [(ngModel)]="encodeData">
+        </ion-input>
+      </ion-item>
+  <button ion-button full icon-left (click)="encodeText()"><ion-icon name="barcode"></ion-icon>สร้าง QR Code</button>
+  <button ion-button full icon-left (click)="scan()" color="secondary"><ion-icon name="qr-scanner"></ion-icon>สแกน QR Code</button>
+ 
+  <div *ngIf="scanData">
+      <p>ข้อความที่สแกน : {{scanData.text}}</p>
+  </div>
 </ion-content>
